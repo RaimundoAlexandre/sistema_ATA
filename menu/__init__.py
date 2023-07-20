@@ -1,11 +1,7 @@
+# Importa a biblioteca customtkinter e a renomeia para ctk
 import customtkinter as ctk
 
 
-def tema_dark():
-    ctk.set_appearance_mode("dark")
-
-
-def tema_light():
-    ctk.set_appearance_mode("light")
-
-
+# Função para definir o tema
+def novo_tema(tema: str):
+    ctk.set_appearance_mode(tema)
