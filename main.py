@@ -156,7 +156,6 @@ bt_atualizar.place(x=1100, y=420)
 criar_tabela(app)
 
 
-
 def deletar_taxista():
     # Obter o nome digitado pelo usuário
     nome_taxista = entry_deletar.get()
