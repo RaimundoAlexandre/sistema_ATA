@@ -15,8 +15,8 @@ def criar_tabela(parent):
 
     # Definir os cabeçalhos das colunas
     tabela.heading("#0", text="", anchor=ctk.CENTER)
-    tabela.heading("Nome", text="Nome", anchor=ctk.CENTER)
-    tabela.heading("CPF", text="CPF", anchor=ctk.CENTER)
+    tabela.heading("Nome", text="Nome", anchor=ctk.W)
+    tabela.heading("CPF", text="CPF", anchor=ctk.W)
     tabela.heading("Número de Inscrição", text="Número de Inscrição", anchor=ctk.CENTER)
     tabela.heading("Placa", text="Placa", anchor=ctk.CENTER)
     tabela.heading("Ano do Carro", text="Ano do Carro", anchor=ctk.CENTER)
@@ -25,15 +25,15 @@ def criar_tabela(parent):
     tabela.heading("Vaga", text="Vaga", anchor=ctk.CENTER)
 
     # Definir largura das colunas
-    tabela.column("#0", minwidth=0, width=0, stretch=ctk.NO)
+    tabela.column("#0", minwidth=0, width=0, stretch=ctk.NO, anchor=ctk.CENTER)
     tabela.column("Nome", anchor=ctk.W, width=120)
     tabela.column("CPF", anchor=ctk.W, width=100)
-    tabela.column("Número de Inscrição", anchor=ctk.W, width=140)
-    tabela.column("Placa", anchor=ctk.W, width=100)
-    tabela.column("Ano do Carro", anchor=ctk.W, width=100)
-    tabela.column("Modelo do Carro", anchor=ctk.W, width=140)
-    tabela.column("Endereço", anchor=ctk.W, width=200)
-    tabela.column("Vaga", anchor=ctk.W, width=80)
+    tabela.column("Número de Inscrição", anchor=ctk.CENTER, width=140)
+    tabela.column("Placa", anchor=ctk.CENTER, width=100)
+    tabela.column("Ano do Carro", anchor=ctk.CENTER, width=100)
+    tabela.column("Modelo do Carro", anchor=ctk.CENTER, width=140)
+    tabela.column("Endereço", anchor=ctk.CENTER, width=200)
+    tabela.column("Vaga", anchor=ctk.CENTER, width=80)
 
     # Definir tema dark para a tabela
     style = ttk.Style()
@@ -95,12 +95,23 @@ def exibir_dados():
 
     # Exibir os dados na tabela
     for taxista in dados_taxistas:
-        tabela.insert("", "end", values=taxista)
+        # Obter os dados do taxista nas posições corretas
+        id_taxista = taxista[0]
+        nome = taxista[1]
+        cpf = taxista[2]
+        num_inscricao = taxista[3]
+        placa = taxista[4]
+        ano_carro = taxista[5]
+        modelo_carro = taxista[6]
+        endereco = taxista[7]
+        vaga = taxista[8]
+
+        # Inserir os dados nas colunas corretas da tabela
+        tabela.insert("", "end",
+                      values=(nome, cpf, num_inscricao, placa, ano_carro, modelo_carro, endereco, vaga, id_taxista))
 
         # Atualizar a variável para indicar que os dados já foram exibidos
         dados_exibidos = True
-    # Exibir os dados na tabela
-    for taxista in dados_taxistas:
-        print(taxista)  # Adicione esta linha para exibir os dados
+
     # Fechar a conexão com o banco de dados
     conn.close()
