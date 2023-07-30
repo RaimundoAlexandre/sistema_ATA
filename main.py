@@ -1,3 +1,4 @@
+# GitHub: RaimundoAlexandre
 import customtkinter as ctk
 import tabela
 import customtkinter as ctk
@@ -9,7 +10,7 @@ from cadastrar import cadastrar_taxista
 # Cria a janela principal do aplicativo
 app = ctk.CTk()
 app.geometry('1280x620')  # Define as dimensões da janela (largura x altura)
-app.title('Sistema ATA')  # Define o título da janela
+app.title('TaxiSys')  # Define o título da janela
 app.resizable(width=False, height=False)  # Trava o dimensionamento da janela
 ctk.set_default_color_theme("dark-blue")  # Define o tema de cores para "dark-blue"
 ctk.set_appearance_mode("dark")  # Define o tema "dark" (modo escuro)
