@@ -21,7 +21,7 @@ criar_tabela(app)
 # frames config
 frame1 = ctk.CTkFrame(master=app, width=320, height=400).place(x=10, y=20)
 frame2 = ctk.CTkFrame(master=app, width=1050, height=200).place(x=210, y=450)
-
+frame3 = ctk.CTkFrame(master=app, width=500, height=200).place(x=380, y=50)
 
 # Função para definir o tema
 def novo_tema(tema: str):
@@ -191,7 +191,6 @@ bt_deletar.place(x=1130, y=80)  # Posição à direita da janela
 # Criar a entrada para o nome do taxista a ser deletado
 entry_deletar = ctk.CTkEntry(app, width=300, placeholder_text="Nome do Taxista")
 entry_deletar.place(x=970, y=40)  # Posição à direita da janela
-
 
 # Seleção de tema
 def tema_select():
